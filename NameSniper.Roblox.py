@@ -13,16 +13,16 @@ def check(user):
     code = response_data.get("code")
 
     if code == 0:
-      print(Fore.GREEN + f"VALID: {username}" + Style.RESET_ALL)
+      print(Fore.GREEN + f"VALID: {user}" + Style.RESET_ALL)
     elif code == 1:
-      print(Fore.LIGHTBLACK_EX + f"TAKEN: {username}" + Style.RESET_ALL)
+      print(Fore.LIGHTBLACK_EX + f"TAKEN: {user}" + Style.RESET_ALL)
     elif code == 2:
-      print(Fore.RED + f"CENSORED: {username}" + Style.RESET_ALL)
+      print(Fore.RED + f"CENSORED: {user}" + Style.RESET_ALL)
     else:
-      print(Fore.YELLOW + f"OOF: ({code}): {username}" + Style.RESET_ALL)
+      print(Fore.YELLOW + f"OOF: ({code}): {user}" + Style.RESET_ALL)
   
   except requests.exceptions.RequestException as ex:
-    print(Fore.YELLOW + f"FAIL: {username}: {ex}" + Style.RESET_ALL)
+    print(Fore.YELLOW + f"FAIL: {user}: {ex}" + Style.RESET_ALL)
 
 def app():
   with open("users.txt", "r") as content:
